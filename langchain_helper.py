@@ -23,7 +23,7 @@ def get_few_shot_db_chain():
 
     db = SQLDatabase.from_uri(f"mysql+pymysql://{db_user}:{db_password}@{db_host}/{db_name}",
                               sample_rows_in_table_info=3)
-    llm = GooglePalm(google_api_key="AIzaSyD5-Ik7F8bxHUUwZbXzchqDboWy8uJ2RIM", temperature=0.1)
+    llm = GooglePalm(google_api_key="AIzaSyD5lQHerPg06aNNIr06W4gy1IH_0g5c0FA", temperature=0.1)
 
     embeddings = HuggingFaceEmbeddings(model_name='sentence-transformers/all-MiniLM-L6-v2')
     to_vectorize = [" ".join(example.values()) for example in few_shots]
