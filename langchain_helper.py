@@ -16,12 +16,12 @@ load_dotenv()  # take environment variables from .env (especially openai api key
 
 
 def get_few_shot_db_chain():
-    db_user = "root"
-    db_password = "root"
-    db_host = "localhost"
+    db_user = "admin"
+    db_password = "password"
+    rds_endpoint = "mysql.ct8cc0ccaifb.us-east-1.rds.amazonaws.com"
     db_name = "atliq_tshirts"
 
-    db = SQLDatabase.from_uri(f"mysql+pymysql://{db_user}:{db_password}@{db_host}/{db_name}",
+    db = SQLDatabase.from_uri(f"mysql+pymysql://{db_user}:{db_password}@{rds_endpoint}/{db_name}",
                               sample_rows_in_table_info=3)
     llm = GooglePalm(google_api_key="AIzaSyD5lQHerPg06aNNIr06W4gy1IH_0g5c0FA", temperature=0.1)
 
